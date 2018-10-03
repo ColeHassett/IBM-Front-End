@@ -3,9 +3,9 @@ const express = require("express");
 const app = express();
 const body_parser = require("body-parser");
 
-var server_port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080;
-var server_ip_address = process.env.IP || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
-var connection_string = process.env.USERDOMAIN != "Cactopus" ? ('admin:'+process.env.MONGODB_ADMIN_PASSWORD+"@"+process.env.MONGODB_SERVICE_HOST) : 'localhost';
+var server_port = 8080;
+var server_ip_address = '0.0.0.0';
+var connection_string = 'localhost';
 
 app.use(express.static(__dirname+"/public"));
 app.use(body_parser.urlencoded({'extended':'true'}));
